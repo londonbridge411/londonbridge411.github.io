@@ -1,0 +1,11 @@
+.card-section
+{
+    height: 250px;
+    align-items: center;
+    padding-inline: 10px;
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-bottom: 10px;
+}

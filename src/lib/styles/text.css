@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+h1
+{
+    font-size: 60px;
+    font-family: "Roboto", serif;
+    margin: 0px;
+    margin-bottom: 10px;
+    font-weight: normal;    font-style: normal;
+
+}
+
+
+h2
+{
+    font-size: 35px;
+    font-family: "Roboto", serif;
+    font-weight: normal;
+}
+
+h3
+{
+    font-size: 25px;
+    font-family: "Roboto", serif;
+    font-weight: normal;
+}
+
+.regular-text, li, p
+{
+    font-size: 20px;
+    color: rgb(207, 207, 207);
+}
+
+.context
+{
+    font-size: 15px;
+    font-style: italic;
+    color: rgb(207, 207, 207);   
+}
+

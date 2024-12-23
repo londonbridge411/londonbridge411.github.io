@@ -1,7 +1,10 @@
 <script>
+	import { fade } from 'svelte/transition';
+    import { goto } from "$app/navigation";
 	import Navbar from "$lib/components/navbar.svelte";
 	import Skillcard from "$lib/components/skillcard.svelte";
     import Projectcard from "$lib/components/projectcard.svelte";
+    import "$lib/styles/containers.css";
 
     // Images
     import UnityIcon from '$lib/assets/images/icons/unity.png';
@@ -17,7 +20,10 @@
     import FirebaseIcon from '$lib/assets/images/icons/firebase.png';
     import MongoDBIcon from '$lib/assets/images/icons/mongodb.svg';
     import OracleIcon from '$lib/assets/images/icons/oracle.svg';
+
+
     import TrepidationCover from '$lib/assets/images/covers/trep.png';
+    import TrepidationBG from '$lib/assets/images/backgrounds/TrepidationTitle.png';
 
 
     let gamedevIcons = [UnityIcon, BlenderIcon, FLIcon]
@@ -25,35 +31,28 @@
     let dbIcons = [SupabaseIcon, FirebaseIcon, MongoDBIcon, OracleIcon]
 </script>
 
-<h1>Slider thing goes here or something cool goes here + Introduction. Covers whole screen</h1>
-<button>See more</button>
-
-<hr />
-
-<h1>Featured Projects</h1>
-<div class="skill-section">
-    <Projectcard title="Trepidation" images={gamedevIcons} description="Highly skilled in developing games in Unity and composing music in FL Studio." bg_img={TrepidationCover} cover_img={TrepidationCover} />
-    <Projectcard title="Marshall Health IT Docs" images={webdevIcons} description="Highly skilled in developing games in Unity and composing music in FL Studio."/>
-    <Projectcard title="uMuse" images={dbIcons} description="Highly skilled in developing games in Unity and composing music in FL Studio."/>
-    <Projectcard title="WV State Museum Project" images={dbIcons} description="Highly skilled in developing games in Unity and composing music in FL Studio."/>
+<div>
+    <h1>Slider thing goes here or something cool goes here + Introduction. Covers whole screen</h1>
+    <button>See more</button>
+    
+    <hr />
+    
+    <h1>Featured Projects</h1>
+    <div class="card-section">
+        <Projectcard id="trepidation-card" title="Trepidation" to="./projects/games/Trepidation" bg_img={TrepidationBG} cover_img={TrepidationCover} />
+        <Projectcard title="MH IT Docs" bg_img={TrepidationCover} cover_img={TrepidationCover}/>
+        <Projectcard id="umuse-card" title="uMuse" />
+        <Projectcard title="WV State Museum Project" />
+    </div>
+    
+    <button on:click={()=> {goto("/projects")}}>See more</button>
+    
+    <hr />
+    
+    <h1>Skills</h1>
+    <div class="card-section">
+        <Skillcard title="Game Development" images={gamedevIcons} description="Highly skilled in developing games in Unity and composing music in FL Studio."/>
+        <Skillcard title="Web Development" images={webdevIcons} description="Experienced in numerous JavaScript frameworks and NodeJS."/>
+        <Skillcard title="Databases" images={dbIcons} description="Trained in various databases and SQL/NoSQL languages."/>
+    </div>
 </div>
-
-<button>See more</button>
-
-<hr />
-
-<h1>Skills</h1>
-<div class="skill-section">
-    <Skillcard title="Game Development" images={gamedevIcons} description="Highly skilled in developing games in Unity and composing music in FL Studio."/>
-    <Skillcard title="Web Development" images={webdevIcons} description="Highly skilled in developing games in Unity and composing music in FL Studio."/>
-    <Skillcard title="Databases" images={dbIcons} description="Highly skilled in developing games in Unity and composing music in FL Studio."/>
-</div>
-
-
-<style>
-    .skill-section
-    {
-        display: flex;
-        gap: 20px;
-    }
-</style>

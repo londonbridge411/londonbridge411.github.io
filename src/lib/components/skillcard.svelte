@@ -11,7 +11,7 @@
     </div>
     <hr />
 
-    <h1>{props.title}</h1>
+    <h3>{props.title}</h3>
     <p>{props.description}</p>
 </div>
 
@@ -40,8 +40,10 @@
         height: 32px;   
     }
 
-    h1
+    h2
     {
         margin-top: 0;
     }
+    
+
 </style>

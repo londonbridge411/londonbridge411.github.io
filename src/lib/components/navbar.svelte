@@ -4,9 +4,7 @@
 
   function HandleScroll()
   {
-    console.log("gay");
     let nav:HTMLElement = window.document.getElementById("navbar") as HTMLElement;
-    console.log(window.scrollY);
     if (window.scrollY > 10) {
           nav.style.backgroundColor = "black";
           nav.style.boxShadow = "0px 0px 33px 11px rgba(0,0,0,1)";
@@ -20,9 +18,9 @@
 <svelte:window on:scroll={HandleScroll} />
 
 <nav id="navbar">
-  <button on:click={() => goto("./")}>Home</button>
+  <button on:click={() => goto("/")}>Home</button>
   <button on:click={() => goto("./")}>About</button>
-  <button on:click={() => goto("./projects")}>Projects</button>
+  <button on:click={() => goto("/projects")}>Projects</button>
   <button on:click={() => goto("./")}>Contact</button>
   <button >GitHub</button>
   <button on:click={() => window.location.assign("https://www.linkedin.com/in/london-bowen-70010a148/")}>LinkedIn</button>
