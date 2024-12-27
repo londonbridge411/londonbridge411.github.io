@@ -32,6 +32,23 @@ h3
     color: rgb(207, 207, 207);
 }
 
+a
+{
+    font-size: 20px;
+    color: rgb(212, 167, 255);
+}
+
+a:visited
+{
+    font-size: 20px;
+    color: rgb(98, 0, 179);
+}
+
+li
+{
+    padding-bottom: 7.5px;
+}
+
 .context
 {
     font-size: 15px;

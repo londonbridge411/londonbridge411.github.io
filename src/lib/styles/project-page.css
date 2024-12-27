@@ -40,3 +40,10 @@
     margin-bottom: 20px;
     margin-top: 20px;
 }
+
+.media-holder
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}

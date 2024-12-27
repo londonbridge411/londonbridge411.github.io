@@ -19,7 +19,7 @@
 
 <nav id="navbar">
   <button on:click={() => goto("/")}>Home</button>
-  <button on:click={() => goto("./")}>About</button>
+  <button on:click={() => goto("/about")}>About</button>
   <button on:click={() => goto("/projects")}>Projects</button>
   <button on:click={() => goto("./")}>Contact</button>
   <button >GitHub</button>

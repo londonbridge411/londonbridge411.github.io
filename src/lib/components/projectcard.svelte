@@ -51,6 +51,7 @@
         background-color: rgb(53, 53, 53);
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: center;
 
         -webkit-box-shadow: 0px 0px 33px -7px rgba(0,0,0,1);
         -moz-box-shadow: 0px 0px 33px -7px rgba(0,0,0,1);
@@ -61,7 +62,6 @@
         justify-content: center;
         user-select: none;
         transition: all .25s ease-in-out;
-
     }
 
     span

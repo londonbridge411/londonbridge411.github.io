@@ -1,10 +1,11 @@
-<script>
+<script lang="ts">
 	import { fade } from 'svelte/transition';
     import { goto } from "$app/navigation";
 	import Navbar from "$lib/components/navbar.svelte";
 	import Skillcard from "$lib/components/skillcard.svelte";
     import Projectcard from "$lib/components/projectcard.svelte";
     import "$lib/styles/containers.css";
+    import "$lib/styles/text.css";
 
     // Images
     import UnityIcon from '$lib/assets/images/icons/unity.png';
@@ -26,23 +27,38 @@
     import TrepidationBG from '$lib/assets/images/backgrounds/TrepidationTitle.png';
 
 
+    import UmuseBG from "$lib/assets/images/umuse/umuse2.png";
+    import UmuseCover from "$lib/assets/images/umuse/umuse1.png";
+
+
+	import { onMount } from 'svelte';
+
+
     let gamedevIcons = [UnityIcon, BlenderIcon, FLIcon]
     let webdevIcons = [ReactIcon, SvelteIcon, AngularIcon, NodeJSIcon]
     let dbIcons = [SupabaseIcon, FirebaseIcon, MongoDBIcon, OracleIcon]
+
+    onMount(() => {
+        let elem = document.getElementById("bg-image") as HTMLElement;
+        
+        elem.style.backgroundImage = "";
+        elem.classList.add("bg-fade-out");			
+        elem.classList.remove("bg-fade-in");	
+    })
 </script>
 
 <div>
-    <h1>Slider thing goes here or something cool goes here + Introduction. Covers whole screen</h1>
-    <button>See more</button>
+    <h1>Welcome! Click "See More" to learn more about me.</h1>
+    <button on:click={() => {goto("/about")}}>See more</button>
     
     <hr />
     
     <h1>Featured Projects</h1>
     <div class="card-section">
         <Projectcard id="trepidation-card" title="Trepidation" to="./projects/games/Trepidation" bg_img={TrepidationBG} cover_img={TrepidationCover} />
-        <Projectcard title="MH IT Docs" bg_img={TrepidationCover} cover_img={TrepidationCover}/>
-        <Projectcard id="umuse-card" title="uMuse" />
-        <Projectcard title="WV State Museum Project" />
+        <Projectcard id="mhit-card" title="MH IT Docs" to="./projects/personal/MHIT-Docs" bg_img={TrepidationCover} cover_img={TrepidationCover}/>
+        <Projectcard id="umuse-card" title="uMuse" to="./projects/personal/uMuse" bg_img={UmuseBG} cover_img={UmuseCover} />
+        <Projectcard id="wv-museum-card" to="./projects/academic/wv-state-museum" title="WV State Museum Project" />
     </div>
     
     <button on:click={()=> {goto("/projects")}}>See more</button>

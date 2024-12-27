@@ -7,7 +7,7 @@
 	import { onDestroy, onMount } from "svelte";
 
     onMount(() => {
-        let elem = window.document.getElementById("bg-image") as HTMLElement;
+        let elem = document.getElementById("bg-image") as HTMLElement;
         
         elem.style.backgroundImage = "url(" + Firewall + ")";
         elem.classList.add("bg-fade-in");			
@@ -15,10 +15,10 @@
     })
 
     onDestroy(() => {
-        let elem = window.document.getElementById("bg-image") as HTMLElement;
-        elem.style.backgroundImage = "";
-        elem.classList.add("bg-fade-out");			
-        elem.classList.remove("bg-fade-in");	
+        // let elem = window.document.getElementById("bg-image") as HTMLElement;
+        // elem.style.backgroundImage = "";
+        // elem.classList.add("bg-fade-out");			
+        // elem.classList.remove("bg-fade-in");	
     })
 
     function GoBack(event: Event)
