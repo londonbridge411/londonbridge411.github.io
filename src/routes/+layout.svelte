@@ -1,6 +1,7 @@
 <script>
 	import { onNavigate } from "$app/navigation";
 	import Navbar from "$lib/components/navbar.svelte";
+    import "$lib/index";
 
 	// Please ignore the startViewTransition error. This will not work in FireFox!
 	onNavigate(() => {

@@ -1,9 +1,7 @@
 <script lang="ts">
     import clickOutside from "$lib/clickOutside";
-    import "$lib/styles/text.css";
-    import "$lib/styles/project-page.css"
-    
-    import TrepidationBG from "$lib/assets/images/backgrounds/TrepidationTitle.png";
+        
+    import TrepidationTitle from "$lib/assets/images/backgrounds/TrepidationTitle.png";
     import LivingRoom from "$lib/assets/images/covers/trep.png"
 	import { onDestroy, onMount } from "svelte";
 	import Customimage from "$lib/components/customimage.svelte";
@@ -14,7 +12,7 @@
     onMount(() => {
         let elem = document.getElementById("bg-image") as HTMLElement;
         
-        elem.style.backgroundImage = "url(" + TrepidationBG + ")";
+        elem.style.backgroundImage = "url(" + LivingRoom + ")";
         elem.classList.add("bg-fade-in");			
         elem.classList.remove("bg-fade-out");	
     })
@@ -39,7 +37,7 @@
 
 <div use:clickOutside on:click_outside={GoBack} id="test" class="project-page-container">
     <div class="main-image" >
-        <img src={TrepidationBG} />
+        <img src={TrepidationTitle} />
         <p class="context">Image of current title screen</p>
     </div>
 
@@ -54,10 +52,16 @@
         Currently, we are developing a demo to showcase. The demo will include 1 ghost type, 1 map, and a few sets
         of random objectives.
     </p>
-
+    <h2 class="subtitle">Details</h2>
+    <ul>
+        <li>Started in 2022 during my Junior/Senior year of college.</li>
+        <li>Built in Unity 6 using C#.</li>
+        <li>Using Unity Netcode for GameObjects, FacePunch, and SteamMatchmaking for multiplayer.</li>
+    </ul>
     <h2 class="subtitle">Contributions</h2>
     <ul>
         <li>Working as the lead developer.</li>
+        <li>Currently implementing a FSM-GOAP-Hybrid AI for the singleplayer mode.</li>
         <li>Implemented multiplayer networking through Steamworks, Facepunch, and Unity's Netcode for GameObjects.</li>
         <li>Implemented Steam lobbies into the game.</li>
         <li>Progammed many of the basic gameplay mechanics such as: opening/closing doors, flipping lightswitches, etc.</li>
@@ -73,10 +77,10 @@
     <h2 class="subtitle">Media</h2>
 
     <div class="media-holder">
-        <Customimage src={TrepidationBG} text="Title screen." />
-        <Customimage src={LivingRoom} text="Living room in the Demo House as a player." />
-        <Customimage src={trep2} text="Staircase in the Demo House as the ghost." />
-        <Customimage src={trep3} text="Bathroom in the Demo House as the ghost." />
+        <Customimage src={TrepidationTitle} width=350 text="Title screen." />
+        <Customimage src={LivingRoom} width=350 text="Living room in the Demo House as a player." />
+        <Customimage src={trep2} width=350 text="Staircase in the Demo House as the ghost." />
+        <Customimage src={trep3} width=350 text="Bathroom in the Demo House as the ghost." />
     </div>
 
 </div>

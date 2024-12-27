@@ -35,57 +35,67 @@
 
 </script>
 
-<div id={props.id} class="card" style="background-image:url({props.cover_img})" on:pointerenter={SetBackground} on:pointerleave={ClearBackground} on:click={OnClick}>
-    <span><h2>{props.title}</h2><hr /></span>
+<div id={props.id} class="card" on:pointerenter={SetBackground} on:pointerleave={ClearBackground} on:click={OnClick}>
+    <img src={props.cover_img} />
+    <h2>{props.title}
+        <hr />
+</h2>
 </div>
 
 <style>
     .card
     {
-        min-height: 200px;   
-        min-width: 300px;
-
-        height: 200px;   
-        width: 300px;
-
-        background-color: rgb(53, 53, 53);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-
-        -webkit-box-shadow: 0px 0px 33px -7px rgba(0,0,0,1);
-        -moz-box-shadow: 0px 0px 33px -7px rgba(0,0,0,1);
-        box-shadow: 0px 0px 33px -7px rgba(0,0,0,1);
-
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
+        text-align: center;
         user-select: none;
+        text-wrap: wrap;
+        color: white;
+
+        background-color: gray;
+        min-height: 200px;   
+        min-width: 320px;
+
+        height: 200px;   
+        width: 320px;
+
+        text-shadow: black 1px 5px 10px;
+        -webkit-box-shadow: 0px 0px 33px -7px rgba(0,0,0,1);
+        -moz-box-shadow: 0px 0px 33px -7px rgba(0,0,0,1);
+        box-shadow: 0px 0px 33px -7px rgba(0,0,0,1);
+        overflow: hidden;
+
+
         transition: all .25s ease-in-out;
     }
 
-    span
+    img
     {
-        padding: 10px;
-        width:100%;
-        height:100%;
-        justify-items: center;
-        align-content: center;
+        height: 100%;
+        filter: brightness(70%) !important;
+
         transition: all .25s ease-in-out;
-        text-align: center;
     }
+
 
 
     .card:hover
     {
 
         height: 220px;
-        min-width: 320px;
-        width: 320px;
+        min-width: 340px;
+        width: 340px;
 
         -webkit-box-shadow: 0px 0px 33px -7px white;
         -moz-box-shadow: 0px 0px 33px -7px white;
         box-shadow: 0px 0px 33px -7px white;
+    }
+
+    .card:hover img
+    {
+        filter: brightness(100%) blur(5px) !important;
     }
 
 
@@ -98,14 +108,19 @@
         width: 280px;
     }
 
-    .card:hover span
+
+    .card:active h2
     {
-        backdrop-filter: blur(5px);
+        filter: opacity(0%);
     }
 
-    .card h1
+    .card h2
     {
+        padding-top: 35px;
+        position: absolute;
+        width: 320px;
         transition: all .25s ease-in-out;
+        
     }
 
     .card hr
@@ -113,13 +128,12 @@
         visibility: hidden;
         width:  0%;
         transition: all .35s ease-in-out;
-        
     }
 
     .card:hover hr
     {        
         visibility: visible;
-        width:  70%;
+        width: 70%;
+        
     }
-
 </style>

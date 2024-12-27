@@ -1,8 +1,6 @@
 <script lang="ts">
     import clickOutside from "$lib/clickOutside";
-    import "$lib/styles/text.css";
-    import "$lib/styles/project-page.css"
-    
+
     import CS450 from '$lib/assets/images/covers/cs450.png';
 	import { onDestroy, onMount } from "svelte";
 

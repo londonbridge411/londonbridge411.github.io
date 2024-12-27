@@ -9,3 +9,10 @@
     overflow-y: hidden;
     margin-bottom: 10px;
 }
+
+.media-holder
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}

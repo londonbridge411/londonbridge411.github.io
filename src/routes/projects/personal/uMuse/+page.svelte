@@ -1,10 +1,10 @@
 <script lang="ts">
     import clickOutside from "$lib/clickOutside";
-    import "$lib/styles/text.css";
-    import "$lib/styles/project-page.css"
+
     
-    import UmuseBG from "$lib/assets/images/umuse/umuse2.png";
-    import UmuseCover from "$lib/assets/images/umuse/umuse1.png";
+    import UmusePlaylist from "$lib/assets/images/umuse/umuse2.png";
+    import UmuseFullscreen from "$lib/assets/images/umuse/umuse8.png";
+    import UmuseAccount from "$lib/assets/images/umuse/umuse1.png";
     import UmuseDiscover from "$lib/assets/images/umuse/umuse3.png";
     import UmuseArtists from "$lib/assets/images/umuse/umuse4.png";
     import UmusePlaylists from "$lib/assets/images/umuse/umuse5.png";
@@ -20,7 +20,7 @@
     onMount(() => {
         let elem = document.getElementById("bg-image") as HTMLElement;
         
-        elem.style.backgroundImage = "url(" + UmuseBG + ")";
+        elem.style.backgroundImage = "url(" + UmuseFullscreen + ")";
         elem.classList.add("bg-fade-in");			
         elem.classList.remove("bg-fade-out");	
     })
@@ -44,8 +44,8 @@
 
 <div use:clickOutside on:click_outside={GoBack} id="test" class="project-page-container">
     <div class="main-image" >
-        <img src={UmuseCover} />
-        <p class="context">Image of current title screen</p>
+        <img src={UmusePlaylist} />
+        <p class="context">Image of the Firewall OST.</p>
     </div>
 
     <hr />
@@ -60,14 +60,23 @@
         of random objectives.
     </p>
 
-    <h2 class="subtitle">Contributions</h2>
+    <h2 class="subtitle">Details</h2>
+    <ul>
+        <li>Started in Fall 2023.</li>
+        <li>~85% completion. Currently taking a break to work on other projects.</li>
+        <li>Built using React, NodeJS, and Supabase.</li>
+        <li>Uses React Redux for state management.</li>
+        <li>Supports mobile.</li>
+    </ul>
+
     <h2 class="subtitle">Media</h2>
     <div class="media-holder">
-        <Customimage src={UmuseBG} text="Image of the Firewall OST." />
-        <Customimage src={UmuseDiscover} text="Image of the Discover page." />
-        <Customimage src={UmuseArtists} text="Image of the subscribed artists page." />
-        <Customimage src={UmusePlaylists} text="Image of my account's created and subscribed playlists." />
-        <Customimage src={UmuseEditPlaylist} text="Image of me editing a playlist." />
-        <Customimage src={UmuseQueue} text="Image of the queue." />
+        <Customimage src={UmuseFullscreen} width=350 text="Image of a song playing in Fullscreen Mode." />
+        <Customimage src={UmuseAccount} width=350 text="Image of londythehammer's account." />
+        <Customimage src={UmuseDiscover} width=350 text="Image of the Discover page." />
+        <Customimage src={UmuseArtists} width=350 text="Image of the subscribed artists page." />
+        <Customimage src={UmusePlaylists} width=350 text="Image of my account's created and subscribed playlists." />
+        <Customimage src={UmuseEditPlaylist} width=350 text="Image of me editing a playlist." />
+        <Customimage src={UmuseQueue} width=350 text="Image of the queue." />
     </div>
 </div>

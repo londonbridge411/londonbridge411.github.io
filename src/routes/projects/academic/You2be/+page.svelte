@@ -1,8 +1,6 @@
 <script lang="ts">
     import clickOutside from "$lib/clickOutside";
-    import "$lib/styles/text.css";
-    import "$lib/styles/project-page.css"
-    
+
     import Youtube from '$lib/assets/images/covers/YouTube2.png';
 	import { onDestroy, onMount } from "svelte";
 

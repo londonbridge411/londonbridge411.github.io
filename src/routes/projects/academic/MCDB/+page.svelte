@@ -1,8 +1,6 @@
 <script lang="ts">
     import clickOutside from "$lib/clickOutside";
-    import "$lib/styles/text.css";
-    import "$lib/styles/project-page.css"
-    
+
     import TrepidationBG from "$lib/assets/images/backgrounds/TrepidationTitle.png";
 	import { onDestroy, onMount } from "svelte";
 

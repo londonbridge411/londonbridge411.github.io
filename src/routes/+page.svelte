@@ -27,8 +27,11 @@
     import TrepidationBG from '$lib/assets/images/backgrounds/TrepidationTitle.png';
 
 
-    import UmuseBG from "$lib/assets/images/umuse/umuse2.png";
-    import UmuseCover from "$lib/assets/images/umuse/umuse1.png";
+    import UmusePlaylist from "$lib/assets/images/umuse/umuse2.png";
+    import UmuseFullscreen from "$lib/assets/images/umuse/umuse8.png";
+
+    import MH_BG from "$lib/assets/images/mhit/mh.jpg";
+
 
 
 	import { onMount } from 'svelte';
@@ -51,21 +54,21 @@
     <h1>Welcome! Click "See More" to learn more about me.</h1>
     <button on:click={() => {goto("/about")}}>See more</button>
     
-    <hr />
     
-    <h1>Featured Projects</h1>
+    <h2>Featured Projects</h2>
+    <hr />
     <div class="card-section">
-        <Projectcard id="trepidation-card" title="Trepidation" to="./projects/games/Trepidation" bg_img={TrepidationBG} cover_img={TrepidationCover} />
-        <Projectcard id="mhit-card" title="MH IT Docs" to="./projects/personal/MHIT-Docs" bg_img={TrepidationCover} cover_img={TrepidationCover}/>
-        <Projectcard id="umuse-card" title="uMuse" to="./projects/personal/uMuse" bg_img={UmuseBG} cover_img={UmuseCover} />
+        <Projectcard id="trepidation-card" title="Trepidation" to="./projects/games/Trepidation" bg_img={TrepidationCover} cover_img={TrepidationBG} />
+        <Projectcard id="mhit-card" title="Marshall Health IT Docs" to="./projects/personal/MHIT-Docs" bg_img={MH_BG} cover_img={MH_BG} />
+        <Projectcard id="umuse-card" title="uMuse" to="./projects/personal/uMuse" bg_img={UmuseFullscreen} cover_img={UmusePlaylist} />
         <Projectcard id="wv-museum-card" to="./projects/academic/wv-state-museum" title="WV State Museum Project" />
     </div>
     
-    <button on:click={()=> {goto("/projects")}}>See more</button>
+    <button on:click={()=> {goto("/projects")}}>View All</button>
     
+    
+    <h2>Skills</h2>
     <hr />
-    
-    <h1>Skills</h1>
     <div class="card-section">
         <Skillcard title="Game Development" images={gamedevIcons} description="Highly skilled in developing games in Unity and composing music in FL Studio."/>
         <Skillcard title="Web Development" images={webdevIcons} description="Experienced in numerous JavaScript frameworks and NodeJS."/>

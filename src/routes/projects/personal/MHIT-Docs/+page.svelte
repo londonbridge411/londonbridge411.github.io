@@ -1,15 +1,21 @@
 <script lang="ts">
     import clickOutside from "$lib/clickOutside";
-    import "$lib/styles/text.css";
-    import "$lib/styles/project-page.css"
+
     
-    import TrepidationBG from "$lib/assets/images/backgrounds/TrepidationTitle.png";
+    import MHIT_AddPage from "$lib/assets/images/mhit/mhit-addpage.png";
+    import MHIT_Devices from "$lib/assets/images/mhit/mhit-devices.png";
+    import MHIT_Edit from "$lib/assets/images/mhit/mhit-edit.png";
+    import MHIT_Home from "$lib/assets/images/mhit/mhit-home.png";
+    import MHIT_Printer from "$lib/assets/images/mhit/mhit-printer.png";
+    import MH_BG from "$lib/assets/images/mhit/mh.jpg";
+
 	import { onDestroy, onMount } from "svelte";
+	import Customimage from "$lib/components/customimage.svelte";
 
     onMount(() => {
         let elem = document.getElementById("bg-image") as HTMLElement;
         
-        elem.style.backgroundImage = "url(" + TrepidationBG + ")";
+        elem.style.backgroundImage = "url(" + MH_BG + ")";
         elem.classList.add("bg-fade-in");			
         elem.classList.remove("bg-fade-out");	
     })
@@ -28,15 +34,14 @@
 
 </script>
 
-<svelte:document  />
 
 <h1 class="title">Marshall Health IT Docs</h1>
 <div class="blur" />
 
 <div use:clickOutside on:click_outside={GoBack} id="test" class="project-page-container">
     <div class="main-image" >
-        <img src={TrepidationBG} />
-        <p class="context">Image of current title screen</p>
+        <img src={MHIT_Home} />
+        <p class="context">Image of current homepage.</p>
     </div>
 
     <hr />
@@ -57,6 +62,19 @@
         Additionally, the site has a built in system for tracking checked-in devices and loaners. This has helped our
          team better keep track of what devices we are working on and communicate with owner(s) easier.
     </p>
-    <h2 class="subtitle">Contributions</h2>
+    <h2 class="subtitle">Details</h2>
+    <ul>
+        <li>Started in Fall of 2024.</li>
+        <li>Development took roughly 1.5 months.</li>
+        <li>Built using SvelteKit and MongoDB Atlas</li>
+        <li>Anyone on our team has the ability to upload new directories/pages.</li>
+        <li>Supports mobile.</li>
+    </ul>
     <h2 class="subtitle">Media</h2>
+    <div class="media-holder">
+        <Customimage src={MHIT_AddPage} width=350 text="Image of a song playing in Fullscreen Mode." />
+        <Customimage src={MHIT_Devices} width=350 text="Image of londythehammer's account." />
+        <Customimage src={MHIT_Edit} width=350 text="Image of the Discover page." />
+        <Customimage src={MHIT_Printer} width=350 text="Image of the subscribed artists page." />
+    </div>
 </div>
